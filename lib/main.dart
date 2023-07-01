@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //----ElevatedButton----
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -52,12 +53,25 @@ class HomeScreen extends StatelessWidget {
                         side: BorderSide(color: Colors.black87))),
                 onPressed: () {},
                 child: Text('Press')),
+            //----TextButton----
             TextButton(
               style: TextButton.styleFrom(),
               onPressed: () {},
               child: Text('Text Button'),
             ),
-            OutlinedButton(onPressed: () {}, child: Text('Outline Button'))
+            //----OutlineButton----
+            OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.red),
+                ),
+                onPressed: () {},
+                child: Text('Outline Button')),
+            //----IconButton----
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.contact_mail),
+            ),
+            //----Floating
           ],
         ),
       ),
