@@ -32,9 +32,17 @@ class HomeScreen extends StatelessWidget {
           fontSize: 20,
         ),
         forceMaterialTransparency: false,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.home),
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.connected_tv_sharp))
+        ],
       ),
-      //----------Body----------
 
+      //----------Body----------
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,16 +57,19 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                     shadowColor: Colors.green,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: BorderSide(color: Colors.black87))),
+                      borderRadius: BorderRadius.circular(30),
+                      // side: BorderSide(color: Colors.white)
+                    )),
                 onPressed: () {},
                 child: Text('Press')),
+
             //----TextButton----
             TextButton(
               style: TextButton.styleFrom(),
               onPressed: () {},
               child: Text('Text Button'),
             ),
+
             //----OutlineButton----
             OutlinedButton(
                 style: OutlinedButton.styleFrom(
@@ -66,12 +77,18 @@ class HomeScreen extends StatelessWidget {
                 ),
                 onPressed: () {},
                 child: Text('Outline Button')),
+
             //----IconButton----
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.contact_mail),
             ),
-            //----Floating
+
+            //----FloatingActionButton----
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            ),
           ],
         ),
       ),
