@@ -118,7 +118,22 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text('InkWell'),
                   )),
-
+              Container(
+                height: 100,
+                width: 150,
+                padding: EdgeInsets.all(1),
+                child: Card(
+                  elevation: 5,
+                  shadowColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Sirajul Islam'),
+                  ),
+                ),
+              ),
               //----First Text Field----
               Padding(
                 padding: EdgeInsets.all(16.0),
@@ -145,16 +160,18 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               //----Third Text Field
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    hintText: 'Enter Your Phone',
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 2)),
-                  ),
-                ),
+              TextField(
+                controller: TextEditingController(),
+                obscureText: true,
+                onSubmitted: (value) {
+                  print(value);
+                },
+                readOnly: false,
+                textAlign: TextAlign.center,
+                textInputAction: TextInputAction.go,
+                // onChanged: (value) {
+                //   print(value);
+                // },
               ),
             ],
           ),
