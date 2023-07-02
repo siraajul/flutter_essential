@@ -50,73 +50,87 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
 
       //----------Body----------
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //----ElevatedButton----
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    // minimumSize: Size(100, 40),
-                    // maximumSize: Size(1000, 40),
-                    elevation: 10,
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                    shadowColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      // side: BorderSide(color: Colors.white)
-                    )),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //----ElevatedButton----
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      // minimumSize: Size(100, 40),
+                      // maximumSize: Size(1000, 40),
+                      elevation: 10,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      shadowColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        // side: BorderSide(color: Colors.white)
+                      )),
+                  onPressed: () {},
+                  child: Text('Press')),
+
+              //----TextButton----
+              TextButton(
+                style: TextButton.styleFrom(),
                 onPressed: () {},
-                child: Text('Press')),
+                child: Text('Text Button'),
+              ),
 
-            //----TextButton----
-            TextButton(
-              style: TextButton.styleFrom(),
-              onPressed: () {},
-              child: Text('Text Button'),
-            ),
+              //----OutlineButton----
+              OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.red),
+                  ),
+                  onPressed: () {},
+                  child: Text('Outline Button')),
 
-            //----OutlineButton----
-            OutlinedButton(
+              //Adding Icon on Outline Button
+              OutlinedButton.icon(
                 style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: Colors.red),
-                ),
+                    side: BorderSide(color: Colors.green)),
                 onPressed: () {},
-                child: Text('Outline Button')),
+                icon: Icon(Icons.home),
+                label: Text('Home'),
+              ),
 
-            //Adding Icon on Outline Button
-            OutlinedButton.icon(
-              style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: Colors.green)),
-              onPressed: () {},
-              icon: Icon(Icons.home),
-              label: Text('Home'),
-            ),
+              //----IconButton----
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.contact_mail),
+              ),
 
-            //----IconButton----
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.contact_mail),
-            ),
-
-            //Custom Clickable or Text
-            InkWell(
-                splashColor: Colors.red,
-                onLongPress: () {
-                  print('Long Pressed');
-                },
-                onDoubleTap: () {
-                  print('Double Tap');
-                },
-                onTap: () {
-                  print('Taped');
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('InkWell'),
-                )),
-          ],
+              //Custom Clickable or Text
+              InkWell(
+                  splashColor: Colors.red,
+                  onLongPress: () {
+                    print('Long Pressed');
+                  },
+                  onDoubleTap: () {
+                    print('Double Tap');
+                  },
+                  onTap: () {
+                    print('Taped');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('InkWell'),
+                  )),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Your Email',
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2)),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
