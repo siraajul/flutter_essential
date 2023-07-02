@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         title: Text('Flutter Essential Widget'),
         centerTitle: true,
         backgroundColor: Colors.red,
-        elevation: 30,
+        elevation: 05,
         titleTextStyle: TextStyle(
           fontSize: 20,
         ),
@@ -41,6 +41,13 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {}, icon: const Icon(Icons.connected_tv_sharp))
         ],
       ),
+
+      //----FloatingActionButton----
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Add'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
 
       //----------Body----------
       body: Center(
@@ -84,11 +91,22 @@ class HomeScreen extends StatelessWidget {
               icon: Icon(Icons.contact_mail),
             ),
 
-            //----FloatingActionButton----
-            FloatingActionButton(
-              onPressed: () {},
-              child: Icon(Icons.add),
-            ),
+            //Custom Clickable or Text
+            InkWell(
+                splashColor: Colors.red,
+                onLongPress: () {
+                  print('Long Pressed');
+                },
+                onDoubleTap: () {
+                  print('Double Tap');
+                },
+                onTap: () {
+                  print('Taped');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('InkWell'),
+                ))
           ],
         ),
       ),
