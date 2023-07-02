@@ -118,12 +118,39 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text('InkWell'),
                   )),
+
+              //----First Text Field----
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.name,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Your Name',
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2)),
+                  ),
+                ),
+              ),
+
+              //----Second Text Field----
               Padding(
                 padding: EdgeInsets.all(16.0),
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'Enter Your Email',
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 2)),
+                  ),
+                ),
+              ),
+              //----Third Text Field
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Your Phone',
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.red, width: 2)),
                   ),
