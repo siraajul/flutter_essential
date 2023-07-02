@@ -85,6 +85,15 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {},
                 child: Text('Outline Button')),
 
+            //Adding Icon on Outline Button
+            OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.green)),
+              onPressed: () {},
+              icon: Icon(Icons.home),
+              label: Text('Home'),
+            ),
+
             //----IconButton----
             IconButton(
               onPressed: () {},
@@ -106,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text('InkWell'),
-                ))
+                )),
           ],
         ),
       ),
