@@ -166,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                 onSubmitted: (value) {
                   print(value);
                 },
-                readOnly: false,
+                readOnly: true,
                 textAlign: TextAlign.center,
                 textInputAction: TextInputAction.go,
                 // onChanged: (value) {
